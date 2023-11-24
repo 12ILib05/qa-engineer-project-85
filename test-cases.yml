@@ -258,7 +258,7 @@ expected-result: |
     аккаунт на Discord
   steps:
     - Нажимаем на ссылку «Sign in with Discord»
-   expected-result: |
+  expected-result: |
     Пользователь должен войти в систему
 
 - summary: |
@@ -271,7 +271,7 @@ expected-result: |
     нет
   steps:
     - Нажимаем кнопку «Sign out»
-   expected-result: |
+  expected-result: |
     Пользователь должен выйти из системы
 
 - summary: |
@@ -528,3 +528,337 @@ expected-result: |
     - Выбираем вкладку «Status»
   expected-result: |
     Пользователь видит статус задачи
+
+- summary: |
+    Создание сборника задач.
+  requirement: |
+    Пользователь может создавать сборник задач
+  prerequisites:
+    Пользователь авторизован в системе
+  test-data: |
+    Name = unique task pack 
+    Task_ids = 111
+  steps:
+    - Открываем меню 
+    - Нажимаем кнопку «Tasks»
+    - Нажимаем кнопку «Create new task pack»
+    - Вводим имя пакета в поле «Name»
+    - Выбираем Hidden в поле «Visibility»
+    - Вводим номер пакета в поле «Task_ids»
+    - Нажимаем кнопку «Save»
+    - Открываем меню 
+    - Нажимаем кнопку «Tasks»
+    - Нажимаем кнопку «Task packs»
+  expected-result: |
+    В списке пакетов отображается пакет задач с введенными пользователем при создании именем, номером и видимостью
+    
+- summary: |
+    Проверка отображения списка турниров
+  requirement: |
+    Пользователь видит список турниров 
+  prerequisites: |
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Нажимаем кнопку «Tournaments»
+  expected-result: |
+    В профиле верно отображается список турниров 
+
+- summary: |
+    Проверка создания нового турнира
+  requirement: |
+    Пользователь может создать новый турнир
+  prerequisites: |
+    Пользователь авторизован в системе
+  test-data: |
+    Name = new_tournament111
+    Description = It is new_tournament111 tournament for test
+    Tags = math
+steps:
+    - Открываем меню
+    - Нажимаем «Tournaments»
+    - Переходим к форме «Create a new tournament»
+    - Заполняем поле «Name»
+    - Выбираем в выпадающем списке «Type» значение «individual» 
+    - Заполняем поле «Description» 
+    - Заполняем поле «Starts at» актуальной датой турнира
+    - Выбираем в выпадающем списке «Access type» значение  «token»
+    - Выбираем в выпадающем списке «Task strategy» значение  «game»
+    - Выбираем в выпадающем списке «Task provider» значение  «tags»
+    - Выбираем в выпадающем списке «Level значение «easy»
+    - Заполняем поле «Tags»
+    - Выбираем в выпадающем списке «Players limit' значение «2»
+    - Выбираем в выпадающем списке «Default language' значение «php»
+    - Вводим 180 в поле «Match timeout sec» 
+    - Вводим 45 в поле «Break duration sec» 
+    - Нажимаем «Create»
+  expected-result: |
+    Создан новый турнир с введенными пользователем параметрами
+
+- summary: |
+    Проверка создания нового турнира с прошедшей датой
+  requirement: |
+    Пользователь не сможет создать новый турнир с уже прошедшей датой
+  prerequisites: |
+    Пользователь авторизован в системе
+  test-data: |
+    Name = new_tournament111_0
+    Description = It is new_tournament111_0 tournament for test again
+    Tags = math
+steps:
+    - Открываем меню
+    - Нажимаем «Tournaments»
+    - Переходим к форме «Create a new tournament»
+    - Заполняем поле «Name»
+    - Выбираем в выпадающем списке «Type» значение «individual» 
+    - Заполняем поле «Description» 
+    - Заполняем поле «Starts at» неактуальной датой турнира
+    - Выбираем в выпадающем списке «Access type» значение  «token»
+    - Выбираем в выпадающем списке «Task strategy» значение  «game»
+    - Выбираем в выпадающем списке «Task provider» значение  «tags»
+    - Выбираем в выпадающем списке «Level значение «easy»
+    - Заполняем поле «Tags»
+    - Выбираем в выпадающем списке «Players limit' значение «2»
+    - Выбираем в выпадающем списке «Default language' значение «php»
+    - Вводим 180 в поле «Match timeout sec» 
+    - Вводим 45 в поле «Break duration sec» 
+    - Нажимаем «Create»
+  expected-result: |
+    Пользователь должен получить сообщение об ошибке
+
+- summary: |
+    Проверка создания нового турнира с уже существующим названием
+  requirement: |
+    Пользователь не сможет создать новый турнир с уже существующим названием
+  prerequisites: |
+    Пользователь авторизован в системе
+  test-data: |
+    Name = new_tournament111
+    Description = It is new_tournament111 tournament for test again and again
+    Tags = math
+  steps:
+    - Открываем меню
+    - Нажимаем «Tournaments»
+    - Переходим к форме «Create a new tournament»
+    - Заполняем поле «Name»
+    - Выбираем в выпадающем списке «Type» значение «individual» 
+    - Заполняем поле «Description» 
+    - Заполняем поле «Starts at» актуальной датой турнира
+    - Выбираем в выпадающем списке «Access type» значение  «token»
+    - Выбираем в выпадающем списке «Task strategy» значение  «game»
+    - Выбираем в выпадающем списке «Task provider» значение  «tags»
+    - Выбираем в выпадающем списке «Level значение «elementary»
+    - Заполняем поле «Tags»
+    - Выбираем в выпадающем списке «Players limit' значение «2»
+    - Выбираем в выпадающем списке «Default language' значение «php»
+    - Вводим 190 в поле «Match timeout sec» 
+    - Вводим 50 в поле «Break duration sec» 
+    - Нажимаем «Create»
+  expected-result: |
+    Пользователь должен получить сообщение об ошибке
+    
+- summary: |
+    Проверка отмены созданного турнира
+  requirement: |
+    Пользователь может отменить турнир, который создал, до его начала
+  prerequisites:
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Открываем меню
+    - Нажимаем «Tournaments»
+    - Нажимаем кнопку «Show» с созданным турниром
+    - Нажимаем кнопку «Cancel»
+  expected-result: |
+    Турнир отменен. При переходе к списку турниров, удаленный турнир там не отображается.
+          
+- summary: |
+    Проверка возможности создания игры 
+  requirement: |
+    Пользователь может создать игру с выбранными параметрами
+  prerequisites: |
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Нажимаем «Create a game»
+    - Выбираем в поле «Level» сложность игры в одну звезду
+    - Выбираем в поле «Game Type» параметр «With a bot»
+    - Выбираем в поле «Time control» время «10 min»
+    - Выбираем в поле «Choose task by name or tags» параметр «rect_area»
+    - Выбираем в поле «Tags» теги «math» и «rest»
+    - Нажимаем «Create battle»
+  expected-result: |
+    Создана игра в соответствии с выбранными параметрами
+
+- summary: |
+    Проверка смены языка программирования в процессе игры
+  requirement: |
+    Пользователь может менять язык программирования в процессе игры
+  prerequisites: |
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Нажимаем «Create a game»
+    - Выбираем в поле «Level» сложность игры в одну звезду
+    - Выбираем в поле «Game Type» параметр «With a bot»
+    - Выбираем в поле «Time control» время «10 min»
+    - Выбираем в поле «Choose task by name or tags» параметр «rect_area»
+    - Выбираем в поле «Tags» теги «math» и «rest»
+    - Нажимаем «Create battle»
+    - Нажимаем на выпадающий список с выбором языков программирования
+    - Выбираем язык Dart
+    - Выбрать язык Golang
+ expected-result: |
+    В редакторе изменяются языки программирования в соответствии с выбранными из списка
+
+- summary: |
+    Проверка возможности сдаться в игре
+  requirement: |
+    Во время игры пользователь может сдаться
+  prerequisites: |
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Нажимаем «Create a game»
+    - Выбираем в поле «Level» сложность игры в одну звезду
+    - Выбираем в поле «Game Type» параметр «With a bot»
+    - Выбираем в поле «Time control» время «10 min»
+    - Выбираем в поле «Choose task by name or tags» параметр «rect_area»
+    - Выбираем в поле «Tags» теги «math» и «rest»
+    - Нажимаем «Create battle»
+    - Нажимаем «Give up»
+    - В всплывающем окне подтверждаем «Give up»
+  expected-result: |
+    Игра завершается. Пользователь получает сообщение о завершении игры.
+
+- summary: |
+    Проверка возможности перезапустить код 
+  requirement: |
+    Пользователь может перезапустить код 
+ prerequisites: |
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Нажимаем «Create a game»
+    - Выбираем в поле «Level» сложность игры в одну звезду
+    - Выбираем в поле «Game Type» параметр «With a bot»
+    - Выбираем в поле «Time control» время «10 min»
+    - Выбираем в поле «Choose task by name or tags» параметр «rect_area»
+    - Выбираем в поле «Tags» теги «math» и «rest»
+    - Нажимаем «Create battle»
+    - Вводим в поле редактора тестовый код
+    - Нажимаем кнопку  «Reset editor»
+  expected-result: |
+    Код перезапущен, в редакторе отображается шаблонный код
+
+- summary: |
+    Проверка отправки сообщений в общем чате на главной странице
+  requirement: |
+    Пользователь может отправлять сообщения в общий чат на главной странице
+  prerequisites:
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Пишем сообщение в текстовое поле чата
+    - Нажимаем на кнопку «Send»
+  expected-result: |
+    В чате отображается отправленное сообщение
+
+- summary: |
+    Проверка отправки сообщений в чате игры
+  requirement: |
+    Пользователь может отправлять сообщения в чат игры
+  prerequisites:
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Нажимаем «Create a game»
+    - Выбираем в поле «Level» сложность игры в одну звезду
+    - Выбираем в поле «Game Type» параметр «With a bot»
+    - Выбираем в поле «Time control» время «10 min»
+    - Выбираем в поле «Choose task by name or tags» параметр «rect_area»
+    - Выбираем в поле «Tags» теги «math» и «rest»
+    - Нажимаем «Create battle»
+    - Пишем сообщение в текстовое поле чата
+    - Нажимаем на кнопку «Send»
+  expected-result: |
+    В чате игры отображается отправленное сообщение
+   
+- summary: |
+    Проверка возможности просматривать историю игры во время игры 
+  requirement: |
+    Пользователь может просматривать историю игры в процессе игры
+  prerequisites:
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Нажимаем «Create a game»
+    - Выбираем в поле «Level» сложность игры в одну звезду
+    - Выбираем в поле «Game Type» параметр «With a bot»
+    - Выбираем в поле «Time control» время «10 min»
+    - Выбираем в поле «Choose task by name or tags» параметр «rect_area»
+    - Выбираем в поле «Tags» теги «math» и «rest»
+    - Нажимаем «Create battle»
+    - Пишем сообщение в текстовое поле чата
+    - Нажимаем на кнопку «Send»
+    - Нажимаем кнопку «Open History»
+    - Нажать на кнопку «Play» 
+  expected-result: |
+    Отображается история игры до момента начала просмотра
+
+- summary: |
+    Проверка успешного завершения игры при победе 
+  requirement: |
+    Если пользователь верно решил задачу и потратил на нее времени меньше, чем соперник, то он должен победить в игре
+   prerequisites:
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Нажимаем «Create a game»
+    - Выбираем в поле «Level» сложность игры в одну звезду
+    - Выбираем в поле «Game Type» параметр «With a bot»
+    - Выбираем в поле «Time control» время «10 min»
+    - Выбираем в поле «Choose task by name or tags» параметр «rect_area»
+    - Выбираем в поле «Tags» теги «math» и «rest»
+    - Нажимаем «Create battle»
+    - Выбираем язык программирования NodeJS
+    - Вводим в поле редактора тестовый код: 
+const _ = require("lodash");
+const R = require("rambda");
+const solution = (width, length) => {
+  return width * length;
+};
+module.exports = solution;
+    - Нажимаем «Check solution»
+  expected-result: |
+     Игра завершена. Пользователь получает сообщение о победе.
+
+- summary: |
+    Проверка проигрыша по истечении времени на игру 
+  requirement: |
+    Если пользователь не смог решить задачу до истечения времени на игру, он проигрывает
+   prerequisites:
+    Пользователь авторизован в системе
+  test-data: |
+    нет
+  steps:
+    - Нажимаем «Create a game»
+    - Выбираем в поле «Level» сложность игры в одну звезду
+    - Выбираем в поле «Game Type» параметр «With a bot»
+    - Выбираем в поле «Time control» время «2 min»
+    - Выбираем в поле «Choose task by name or tags» параметр «rect_area»
+    - Выбираем в поле «Tags» теги «math» и «rest»
+    - Нажимаем «Create battle»
+    - Ждем, когда закончится время игры 
+  expected-result: |
+     Игра завершена. Пользователь получает сообщение о проигрыше.
