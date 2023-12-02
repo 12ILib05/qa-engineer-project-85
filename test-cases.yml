@@ -3,7 +3,7 @@
   requirement: |
     При валидном вводе логина, ника, пароля и подтверждения пользователь должен успешно зарегистрироваться
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
   test-data: |
     Nickname = kem95
     Email = kemocok952@eazenity.com 
@@ -22,7 +22,7 @@
   requirement: |
     При вводе невалидного ника пользователь должен получить сообщение об ошибке
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = 95
     Email = kemocok952@eazenity.com 
@@ -41,7 +41,7 @@
   requirement: |
     При вводе существующего ника пользователь должен получить сообщение об этом
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = 12ILib05
     Email = kemocok952@eazenity.com 
@@ -60,7 +60,7 @@
   requirement: |
     При вводе невалидной почты пользователь должен получить сообщение об ошибке
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = kem95
     Email = kemocok952 
@@ -79,7 +79,7 @@
   requirement: |
     При вводе существующей почты пользователь должен получить сообщение об этом
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = kem95
     Email = kemocok952@eazenity.com 
@@ -98,7 +98,7 @@
   requirement: |
     При вводе невалидного пароля пользователь должен получить сообщение об ошибке
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = kem95
     Email = kemocok952@eazenity.com 
@@ -117,7 +117,7 @@
   requirement: |
     При вводе невалидного подтверждения пароля пользователь должен получить сообщение об ошибке
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = kem95
     Email = kemocok952@eazenity.com 
@@ -137,7 +137,7 @@
   requirement: |
     При верном вводе логина и пароля пользователь должен войти в систему
   prerequisites: |
-    Открыта страница авторизации
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
   test-data: |
     Email = kemocok952@eazenity.com 
     Password = kemocok952
@@ -153,7 +153,7 @@
   requirement: |
     При неправильном логине или пароле пользователь должен получить сообщение об ошибке
   prerequisites:
-    Открыта страница авторизации
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
   test-data: |
     Email = hexlet@eazenity.com 
     Password = badpass
@@ -169,7 +169,7 @@ expected-result: |
   requirement: |
     Пользователь должен получить письмо с ссылкой для восстановления пароля и изменить пароль
   prerequisites:
-    Открыта страница авторизации
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
   test-data: |
     Email = kemocok952@eazenity.com 
     New password = kemocok952new
@@ -193,7 +193,7 @@ expected-result: |
   requirement: |
     Пользователь должен получить сообщение о несуществующем аккаунте
   prerequisites:
-    Открыта страница авторизации
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F 
   test-data: |
     Email = hexlet@eazenity.com
    steps:
@@ -208,7 +208,7 @@ expected-result: |
   requirement: |
     При наличии аккаунта на Github пользователь должен успешно зарегистрироваться
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     аккаунт на Github
   steps:
@@ -224,7 +224,7 @@ expected-result: |
   requirement: |
     При верном вводе логина и пароля пользователь должен войти в систему
   prerequisites: |
-    Открыта страница авторизации
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
   test-data: |
     аккаунт на Github
   steps:
@@ -237,7 +237,7 @@ expected-result: |
   requirement: |
     При наличии аккаунта на Discord пользователь должен успешно зарегистрироваться
   prerequisites: |
-    Открыта страница регистрации
+    Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     аккаунт на Discord
   steps:
@@ -253,7 +253,7 @@ expected-result: |
   requirement: |
     При верном вводе логина и пароля пользователь должен войти в систему
   prerequisites: |
-    Открыта страница авторизации
+    Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F
   test-data: |
     аккаунт на Discord
   steps:
