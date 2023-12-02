@@ -6,7 +6,7 @@
     Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F 
   test-data: |
     Nickname = kem95
-    Email = kemocok952@eazenity.com 
+    Email = kemocok952@eazenity.com (для каждой новой проверки регистрации вводится новая почта)
     Password = kemocok952 
   steps:
     - Вводим Nickname
@@ -15,7 +15,8 @@
     - Вводим Password Confirmation
     - Нажимаем кнопку «Submit»
   expected-result: |
-    Пользователь должен получить письмо с подтверждением регистрации аккаунта
+    Аккаунт зарегистрирован, пользователь перенаправлен на страницу лобби, в меню отображается зарегистрированный ник 
+    Также пользователь должен получить письмо с подтверждением регистрации аккаунта
 
 - summary: |
     Проверка регистрации пользователя через невалидный ник
@@ -44,7 +45,7 @@
     Открыта страница регистрации https://codebattle.hexlet.io/users/new?locale=en&next=%2F
   test-data: |
     Nickname = 12ILib05
-    Email = kemocok952@eazenity.com 
+    Email = kemocok952@eazenity.com (для каждой новой проверки регистрации вводится новая почта)
     Password = kemocok952
   steps:
     - Вводим Nickname
@@ -841,7 +842,7 @@ const solution = (width, length) => {
 module.exports = solution;
     - Нажимаем «Check solution»
   expected-result: |
-     Игра завершена. Пользователь получает сообщение о победе.
+     Игра завершена. Пользователь получает сообщение о победе
 
 - summary: |
     Проверка проигрыша по истечении времени на игру 
@@ -861,4 +862,4 @@ module.exports = solution;
     - Нажимаем «Create battle»
     - Ждем, когда закончится время игры 
   expected-result: |
-     Игра завершена. Пользователь получает сообщение о проигрыше.
+     Игра завершена. Пользователь получает сообщение о проигрыше
