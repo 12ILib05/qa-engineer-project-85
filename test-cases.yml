@@ -230,7 +230,7 @@
     аккаунт на Github
   steps:
     - Нажимаем на ссылку «Sign in with Github»
-   expected-result: |
+  expected-result: |
     Пользователь должен войти в систему
 
 - summary: |
@@ -473,7 +473,7 @@
     - Нажимаем кнопку «My profile»
     - Выбираем вкладку «Completed games»
     - В графе «Players» нажимаем на ссылку с ником соперника
-expected-result: |
+  expected-result: |
     Происходит переход на профиль соперника
 
 - summary: |
@@ -581,7 +581,7 @@ expected-result: |
     Name = new_tournament111
     Description = It is new_tournament111 tournament for test
     Tags = math
-steps:
+  steps:
     - Открываем меню
     - Нажимаем «Tournaments»
     - Переходим к форме «Create a new tournament»
@@ -612,7 +612,7 @@ steps:
     Name = new_tournament111_0
     Description = It is new_tournament111_0 tournament for test again
     Tags = math
-steps:
+  steps:
     - Открываем меню
     - Нажимаем «Tournaments»
     - Переходим к форме «Create a new tournament»
@@ -746,7 +746,7 @@ steps:
     Проверка возможности перезапустить код 
   requirement: |
     Пользователь может перезапустить код 
- prerequisites: |
+  prerequisites: |
     Пользователь авторизован в системе
   test-data: |
     нет
@@ -831,7 +831,7 @@ module.exports = solution;
     Проверка успешного завершения игры при победе 
   requirement: |
     Если пользователь верно решил задачу и потратил на нее времени меньше, чем соперник, то он должен победить в игре
-   prerequisites:
+  prerequisites:
     Пользователь авторизован в системе
   test-data: |
     нет
