@@ -146,7 +146,7 @@
     - Вводим Email
     - Вводим Password
     - Нажимаем кнопку «Submit»
-   expected-result: |
+  expected-result: |
     Пользователь должен войти в систему
 
 - summary: |
