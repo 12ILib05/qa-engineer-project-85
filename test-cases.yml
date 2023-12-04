@@ -197,11 +197,11 @@
     Открыта страница авторизации https://codebattle.hexlet.io/session/new?locale=en&next=%2F 
   test-data: |
     Email = hexlet@eazenity.com
-   steps:
+  steps:
     - Переходим по ссылке “Forgot your password?”
     - Вводим Email
     - Нажимаем кнопку «Submit»
-   expected-result: |
+  expected-result: |
     Пользователь должен получить сообщение о несуществующем аккаунте
 
 - summary: |
