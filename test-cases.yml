@@ -758,13 +758,12 @@
     - Выбираем в поле «Choose task by name or tags» параметр «rect_area»
     - Выбираем в поле «Tags» теги «math» и «rest»
     - Нажимаем «Create battle»
-    - Вводим в поле редактора тестовый код: 
-    const _ = require("lodash");
-    const R = require("rambda");
-    const solution = (width, length) => {
-    return width * length;
-    };
-    module.exports = solution;
+    - Вводим в поле редактора тестовый код 
+    # const _ = require("lodash");
+    # const R = require("rambda");
+    # const solution = (width, length) => {
+    # return width * length; };
+    # module.exports = solution;
     - Нажимаем кнопку  «Reset editor»
   expected-result: |
     Код перезапущен, в редакторе отображается шаблонный код
@@ -844,13 +843,12 @@
     - Выбираем в поле «Tags» теги «math» и «rest»
     - Нажимаем «Create battle»
     - Выбираем язык программирования NodeJS
-    - Вводим в поле редактора тестовый код: 
-    const _ = require("lodash");
-    const R = require("rambda");
-    const solution = (width, length) => {
-    return width * length;
-    };
-    module.exports = solution;
+    - Вводим в поле редактора тестовый код 
+    # const _ = require("lodash");
+    # const R = require("rambda");
+    # const solution = (width, length) => {
+    # return width * length;};
+    # module.exports = solution;
     - Нажимаем «Check solution»
   expected-result: |
      Игра завершена. Пользователь получает сообщение о победе
